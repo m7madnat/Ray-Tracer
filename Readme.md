@@ -3,6 +3,10 @@
 A simple and efficient raytracer written in Rust. This project renders 3D models using customizable camera positions, lighting, and shading. Output images are generated in PPM format and can be easily viewed with any image viewer.
 
 ---
+<p align="center">
+  <img src="examples/per.png" alt="Example Render" />
+</p>
+
 
 ## ✨ Features
 
@@ -87,20 +91,3 @@ output.ppm
 
 Open `output.ppm` with any image viewer that supports PPM format.
 
----
-
-## 🧩 Contribution Guidelines
-
-1. Fork the repository and create your branch.
-2. Make your changes with clear commit messages.
-3. Submit a pull request describing your changes.
-
-All contributions are welcome! Please follow Rust best practices and ensure code is well-documented.
-
----
-
-## 📄 License
-
-This project is licensed under the [LICENSE](LICENSE) (placeholder).
-
----
