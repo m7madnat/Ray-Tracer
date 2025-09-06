@@ -1,59 +1,106 @@
-## 🧱 Raytracer - How to Use
+# Ray-Tracer
 
-This simple raytracer renders models using camera positions and brightness. You can render a specific object by passing its name as an argument when running the program.
+A simple and efficient raytracer written in Rust. This project renders 3D models using customizable camera positions, lighting, and shading. Output images are generated in PPM format and can be easily viewed with any image viewer.
 
-### 🏁 How to Run
+---
 
-Build and run the project in **release mode** for faster performance:
+## ✨ Features
+
+- Render spheres, cubes, cylinders, planes, and more
+- Adjustable camera position and orientation
+- Configurable brightness and lighting
+- Multiple example scenes included
+- Fast rendering with Rust's performance
+- Easy-to-edit source code for custom scenes
+
+---
+
+## 🛠 Tech Stack
+
+- **Language:** Rust
+- **Build System:** Cargo
+- **Image Output:** PPM format
+- **Dependencies:** None (pure Rust implementation)
+
+---
+
+## 🚀 Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/ray-tracer.git
+   cd ray-tracer
+   ```
+
+2. **Build the project (release mode recommended):**
+   ```bash
+   cargo build --release
+   ```
+
+---
+
+## 📦 Usage
+
+### Render an Example Scene
+
+Run the raytracer with the desired object name:
 
 ```bash
 cargo run --release <object_name>
 ```
 
-✅ Example:
-
+**Example:**
 ```bash
 cargo run --release cube
 ```
 
-This will render a cube based on the camera angle in `camera.rs`.
+This will render a cube scene using the camera settings in [`src/camera.rs`](src/camera.rs).
 
----
+### Camera Control
 
-### 🎥 Camera Control
-
-Camera settings are **hardcoded** in `camera.rs`:
+Camera settings are hardcoded in [`src/camera.rs`](src/camera.rs):
 
 ```rust
 let look_from = Vec3::new(...);  // Camera position
 let look_at = Vec3::new(...);    // Where the camera looks
 ```
 
-If you want a **top view**, **side view**, or **front view**, edit the `look_from` and `look_at` values in the `Camera::new()` method.
+Edit these values in the `Camera::new()` method for different views (top, side, front).
 
----
+### Brightness & Lighting
 
-### 💡 Brightness / Lighting
-
-Brightness and shading are affected by light direction and dot product logic. You can tweak this inside main:
+Brightness and shading are affected by light direction and dot product logic. You can tweak this inside [`src/main.rs`](src/main.rs):
 
 ```rust
 color = (color / (samples_per_pixel as f32)) * 1.5;
 ```
 
-Change `1.5`, increase to make brighter, and decrease to make it darker.
+Increase `1.5` for brighter output, decrease for darker.
+
+### Output
+
+After rendering, the image is saved as:
+
+```
+output.ppm
+```
+
+Open `output.ppm` with any image viewer that supports PPM format.
 
 ---
 
-### 🖼 Output
+## 🧩 Contribution Guidelines
 
-After running the raytracer, the rendered image is saved as:
+1. Fork the repository and create your branch.
+2. Make your changes with clear commit messages.
+3. Submit a pull request describing your changes.
 
-```
-output.png
-```
-
-You can view it with any image viewer.
+All contributions are welcome! Please follow Rust best practices and ensure code is well-documented.
 
 ---
 
+## 📄 License
+
+This project is licensed under the [LICENSE](LICENSE) (placeholder).
+
+---
